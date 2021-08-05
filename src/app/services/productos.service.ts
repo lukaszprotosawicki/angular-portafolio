@@ -22,7 +22,11 @@ export class ProductosService {
     console.log(resp);
 
     this.productos = resp;
-    this.cargando = false;
+   
+
+    setTimeout(() => {
+      this.cargando = false;
+    }, 2000)
       } );
 
   }
