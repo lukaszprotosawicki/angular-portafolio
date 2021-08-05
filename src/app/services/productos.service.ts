@@ -19,7 +19,7 @@ export class ProductosService {
   private cargarProductos() {
       this.http.get('https://angular-html-c039d-default-rtdb.europe-west1.firebasedatabase.app/productos_idx.json').subscribe( ( resp: any ) => {
 
-    console.log(resp);
+
 
     this.productos = resp;
    
@@ -29,5 +29,9 @@ export class ProductosService {
     }, 2000)
       } );
 
+  }
+
+  getProducto ( id: string ) {
+   return this.http.get(`https://angular-html-c039d-default-rtdb.europe-west1.firebasedatabase.app/productos/${id}.json`)
   }
 }
